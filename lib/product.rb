@@ -1,5 +1,6 @@
 class Product
-	attr_reader :title, :price, :stock
+	attr_reader :title, :price
+	attr_accessor :stock
 
 	@@products = []
 
@@ -22,6 +23,10 @@ class Product
 
 	def in_stock?
 		!stock.zero?
+	end
+
+	def decrease_stock_count
+		self.stock -= 1
 	end
 
 	private
