@@ -77,3 +77,10 @@ puts product_return1.customer == walter #Should return true
 puts product_return1.product == nanoblock #Should return true
 
 puts nanoblock.stock #Should return 11
+
+puts walter.return_product(nanoblock, defect: true)
+
+puts ProductReturn.all.count #Should return 2
+
+puts nanoblock.stock #Should return 11
+puts ProductReturn.items_in_service #Should return 1

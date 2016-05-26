@@ -24,8 +24,8 @@ class Customer
 		end
 	end
 
-	def return_product(product)
-		ProductReturn.new(self, product)
+	def return_product(product, options={})
+		ProductReturn.new(self, product, options[:defect])
 	end
 
 	private
