@@ -68,19 +68,25 @@ puts transaction2.product == nanoblock # Should return true
 
 # PRODUCT_RETURNS
 
-puts walter.return_product(nanoblock)
+# puts walter.return_product(nanoblock)
 
-puts ProductReturn.all.count #Should return 1
+# puts ProductReturn.all.count #Should return 1
 
-product_return1 = ProductReturn.find(1)
-puts product_return1.customer == walter #Should return true
-puts product_return1.product == nanoblock #Should return true
+# product_return1 = ProductReturn.find(1)
+# puts product_return1.customer == walter #Should return true
+# puts product_return1.product == nanoblock #Should return true
 
-puts nanoblock.stock #Should return 11
+# puts nanoblock.stock #Should return 11
 
-puts walter.return_product(nanoblock, defect: true)
+# puts walter.return_product(nanoblock, defect: true)
 
-puts ProductReturn.all.count #Should return 2
+# puts ProductReturn.all.count #Should return 2
 
-puts nanoblock.stock #Should return 11
-puts ProductReturn.items_in_service #Should return 1
+# puts nanoblock.stock #Should return 11
+# puts ProductReturn.items_in_service #Should return 1
+
+# mike = Customer.new(name: "Mike Johnson")
+# puts mike.return_product(nanoblock)
+# Should return NotRecordedTransactionError: There was no such transaction recorded.
+
+

@@ -25,7 +25,11 @@ class Customer
 	end
 
 	def return_product(product, options={})
-		ProductReturn.new(self, product, options[:defect])
+		if Transaction.find_by(customer: self, product: product).empty?
+			raise NotRecordedTransactionError, "There was no such transaction recorded."
+		else
+			ProductReturn.new(self, product, options[:defect])
+		end
 	end
 
 	private

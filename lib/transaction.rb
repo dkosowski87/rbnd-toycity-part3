@@ -19,6 +19,14 @@ class Transaction
 		@@transactions.find { |transaction| transaction.id == id }
 	end
 
+	def self.find_by(options={})
+		transactions = @@transactions
+		options.each do |key, value|
+			transactions.select! { |transaction| transaction.send(key) == value }
+		end
+		return transactions
+	end
+
 	private
 	def add_to_transactions
 		@@transactions << self
