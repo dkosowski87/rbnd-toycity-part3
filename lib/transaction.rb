@@ -1,5 +1,5 @@
 class Transaction
-	attr_reader :id, :product, :customer
+	attr_reader :id, :customer, :product
 
 	@@id = 1
 	@@transactions = []

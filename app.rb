@@ -2,6 +2,7 @@ require_relative "lib/errors"
 require_relative "lib/customer"
 require_relative "lib/product"
 require_relative "lib/transaction"
+require_relative "lib/product_return"
 
 # PRODUCTS
 
@@ -64,3 +65,15 @@ puts transaction2.product == nanoblock # Should return true
 
 # walter.purchase(firehouse)
 # Should return OutOfStockError: 'LEGO Firehouse Headquarter' is out of stock.
+
+# PRODUCT_RETURNS
+
+puts walter.return_product(nanoblock)
+
+puts ProductReturn.all.count #Should return 1
+
+product_return1 = ProductReturn.find(1)
+puts product_return1.customer == walter #Should return true
+puts product_return1.product == nanoblock #Should return true
+
+puts nanoblock.stock #Should return 11

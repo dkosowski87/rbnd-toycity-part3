@@ -24,6 +24,10 @@ class Customer
 		end
 	end
 
+	def return_product(product)
+		ProductReturn.new(self, product)
+	end
+
 	private
 	def add_to_customers
 		if @@customers.map { |customer| customer.name }.include? name
