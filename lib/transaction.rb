@@ -19,6 +19,8 @@ class Transaction
 		@@transactions.find { |transaction| transaction.id == id }
 	end
 
+	#Finds the particular transaction by parameters passed as an option hash.
+	#It iterates throught the option hash to apply particular filters to the search.
 	def self.find_by(options={})
 		transactions = @@transactions.dup
 		options.merge!({date: Date.parse(options[:date])}) if options[:date]

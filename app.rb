@@ -90,7 +90,8 @@ puts transaction2.product == nanoblock # Should return true
 # puts mike.return_product(nanoblock)
 # Should return NotRecordedTransactionError: There was no such transaction recorded.
 
-# DATES 
+# FINDING TRANSACTIONS
+
 # transaction1 = Transaction.new(walter, nanoblock, Date.new(2016,04,02))
 # transaction2 = Transaction.new(walter, nanoblock, Date.new(2016,04,10))
 # transaction3 = Transaction.new(walter, nanoblock, Date.new(2016,04,30))
