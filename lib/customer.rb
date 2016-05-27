@@ -16,25 +16,26 @@ class Customer
 		@@customers.find { |customer| customer.name == name}
 	end
 
-	def purchase(product)
+	def purchase(product, date = Date.today)
+		date = date.is_a?(String) ? Date.parse(date) : date
 		if product.in_stock?
-			Transaction.new(self, product)
+			Transaction.new(self, product, date)
 		else
 			raise OutOfStockError, "'#{product.title}' is out of stock."
 		end
 	end
 
-	def return_product(product, options={})
+	def return_product(product, defect = false)
 		if Transaction.find_by(customer: self, product: product).empty?
 			raise NotRecordedTransactionError, "There was no such transaction recorded."
 		else
-			ProductReturn.new(self, product, options[:defect])
+			ProductReturn.new(self, product, defect)
 		end
 	end
 
 	private
 	def add_to_customers
-		if @@customers.map { |customer| customer.name }.include? name
+		if Customer.find_by_name(name)
 			raise DuplicateCustomerError, "'#{name}' already exists."
 		else
 			@@customers << self

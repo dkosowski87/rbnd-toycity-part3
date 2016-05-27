@@ -3,6 +3,7 @@ require_relative "lib/customer"
 require_relative "lib/product"
 require_relative "lib/transaction"
 require_relative "lib/product_return"
+require 'date'
 
 # PRODUCTS
 
@@ -68,7 +69,7 @@ puts transaction2.product == nanoblock # Should return true
 
 # PRODUCT_RETURNS
 
-# puts walter.return_product(nanoblock)
+# walter.return_product(nanoblock)
 
 # puts ProductReturn.all.count #Should return 1
 
@@ -78,7 +79,7 @@ puts transaction2.product == nanoblock # Should return true
 
 # puts nanoblock.stock #Should return 11
 
-# puts walter.return_product(nanoblock, defect: true)
+# walter.return_product(nanoblock, defect: true)
 
 # puts ProductReturn.all.count #Should return 2
 
@@ -89,4 +90,10 @@ puts transaction2.product == nanoblock # Should return true
 # puts mike.return_product(nanoblock)
 # Should return NotRecordedTransactionError: There was no such transaction recorded.
 
+# DATES 
+# transaction1 = Transaction.new(walter, nanoblock, Date.new(2016,04,02))
+# transaction2 = Transaction.new(walter, nanoblock, Date.new(2016,04,10))
+# transaction3 = Transaction.new(walter, nanoblock, Date.new(2016,04,30))
 
+# puts Transaction.find_by(customer: walter, date: "2016-04-02").size #should return 1
+# puts Transaction.find_between_dates("2016-03-31", "2016-04-30").size #should return 3

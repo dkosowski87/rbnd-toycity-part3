@@ -35,7 +35,7 @@ class Product
 
 	private
 	def add_to_products
-		if @@products.map { |product| product.title }.include? title
+		if Product.find_by_title(title)
 			raise DuplicateProductError, "'#{title}' already exists."
 		else
 			@@products << self

@@ -5,7 +5,7 @@ class ProductReturn
 	@@product_returns = []
 	@@items_in_service = 0
 
-	def initialize(customer, product, defect)
+	def initialize(customer, product, defect = false)
 		@id, @customer, @product = @@id, customer, product
 		@@id += 1
 		add_to_product_returns
