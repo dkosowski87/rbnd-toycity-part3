@@ -1,0 +1,20 @@
+1) How long did you spend working on this project?
+
+I spend about 2 hours on the main part. Each of the additional features took me between 3-4 hours. I played also with some other features so roughly it took me about 15 hours to get to the final state.
+Most of the time (1-2 hours) I spend on the planning phase - thinking about the API, drawing diagrams, writing the tests in the app.rb - after that the implementation of the code went quite smoothly. I also spend time thinking about refactoring the code (over an hour for each feature), sometimes that lead to almost no change in the code :)
+
+2) What was the most rewarding challenge you conquered?
+
+Still for me the most challenging part is thinking about the API. To write down in which classes the particular methods should be and how the objects should interact with each other. Not quite sure if I done it right even now.
+
+3) What two additional features did you build? Why?
+
+PRODUCT RETURNS
+Added a feature that allows the customers to return products. It should help to monitor what happens if the client will decide to return a product. The program checks if a transaction took place and the client is eligible for a return. It also allows for passing information if the product has a defect. In cases of a product return without a defect the program updates the stock of a particular product. The defected products are not added back to the stock but are accounted as items in service.
+
+FINDING TRANSACTIONS
+Added this feature to allow for a better search of transactions. Now it is possible to search transactions by multiple parameters. That allows for finding transactions of a particular client, product, date or a combination of those. Useful for retrieving sales data and for other classes like the product return. I added the date attribute to allow also for searching of transactions in particular time periods - could be quite useful for generating sales reports for particular months or looking at the seasonality of sales.
+
+4) Where do you still have room to grow?
+
+I think I have still much room to grow in object orientated design -to better understand how particular parts of an app should work together. But also still ample room for ruby docs to learn new methods and come up with DRY'er code.
